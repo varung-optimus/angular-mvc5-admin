@@ -12,10 +12,9 @@ namespace SmartAdminMvc
         {
             bundles.Add(new StyleBundle("~/content/smartadmin").IncludeDirectory("~/content/css", "*.min.css"));
 
-            bundles.Add(new ScriptBundle("~/scripts/smartadmin").Include(
-                "~/scripts/app.config.seed.min.js",
-                "~/scripts/bootstrap/bootstrap.min.js",
-                "~/scripts/app.seed.min.js"));
+            bundles.Add(new ScriptBundle("~/bundles/angularApp")
+            .IncludeDirectory("~/Scripts/Controllers", "*.js")
+            .Include("~/Scripts/app.js"));
 
             BundleTable.EnableOptimizations = true;
         }
