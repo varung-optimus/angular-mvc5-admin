@@ -1,14 +1,20 @@
-var app = angular.module('app', ['ngRoute']);
+"use strict";
 
-var configFunction = function ($routeProvider) {
-    $routeProvider.
-        when('/form', {
-            templateUrl: '/form/'
-        })
-        .otherwise({
-            redirectTo: '/home/'
+
+angular.module('app', [
+    'ui.router'
+])
+
+
+angular.module('app').config(function ($stateProvider) {
+
+    $stateProvider
+        .state('app.form', {
+            data: {
+                title: 'Forms'
+            }
         });
-}
-configFunction.$inject = ['$routeProvider'];
 
-app.config(configFunction);
+ 
+
+});
